@@ -17,7 +17,9 @@ namespace Text_Based_Game
         private int special = 0;
         private int experience = 0;
         private String name = "";
-        private String[] inventory = {"Handgun","Empty","Empty","Empty","Empty","Empty"};
+        // I think that is better a List because if you can add some kind of bad (+5 spaces) or something like this
+        // You will need to check the size, for example, if player hasn´t a bag, maxItems = 0
+        private List<string> inventory = {"Handgun"};
 
 
         /// <summary>
@@ -117,9 +119,9 @@ namespace Text_Based_Game
             Console.WriteLine("Defense:" + defense);
             Console.WriteLine("Special:" + special);
             Console.WriteLine("Name:" + name);
-            if (inventory.Length != 0)
+            if (inventory.Count != 0)
             {
-                for (int i = 0; i < inventory.Length; i++)
+                for (int i = 0; i < inventory.Count; i++)
                 {
                     Console.WriteLine("Inventory Slot " + (i + 1) + ":" + inventory[i]);
                 }
